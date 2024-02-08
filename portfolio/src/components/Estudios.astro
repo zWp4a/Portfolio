@@ -1,0 +1,41 @@
+---
+import type { Code } from "astro:components"
+import Estudiositem from "./Estudiositem.astro"
+
+const ESTUDIOS = [
+    {
+        date: 'Actualmente...',
+        title: 'Tecnólogo en Informática - Fing',
+        instituto:
+        'UTU Buceo.',
+        link: 'https://www.fing.edu.uy/tecnoinf/mvd/',
+        
+    },
+    
+    {   
+        date: 'Marzo 2021 - Diciembre 2022',
+        title: 'Expero en PCs, Notebooks y Gestion de Soportes.',
+        instituto:'Instituto IBEC - Certificados',
+    },
+
+    {   
+        date: 'Marzo 2018 - Diciembre 2022',
+        title: 'Bachillerato Tecnologico en Informatica - EMT',
+        instituto:'ITS - Instituto Tecnologico Superior Arias Balparda.',
+    },
+
+
+
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">                  
+    {
+    ESTUDIOS.map(estudios => (
+    <li class="mb-10 ms-4">
+        <Estudiositem { ... estudios} />
+        </li>
+    ))
+    }
+</ol>
+
