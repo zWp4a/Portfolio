@@ -1,0 +1,46 @@
+
+---
+import C from '../components/icons/C.astro'
+const TAGS = {
+    C:{
+    name: 'C++',
+    class:'bg-black text-white',
+    icon: C,
+    },
+}
+
+const PROYECTOS = [
+    {
+        title: 'Tecnólogo en Informática - Fing',
+        description: 'UTU Buceo.',
+        link: '#',
+        github:'#',
+        image:"/src/components/335shots_so.webp",
+        tags: [TAGS.C,]
+    }
+]
+---
+
+{
+ PROYECTOS.map(({title, description, tags, image })=> (
+<article>
+    
+    <h3 class="text-2xl fonrt-semibold text-yellow-200 mb-2">{title} </h3>
+    <p class="text-lg mb-4 text-pretty">{description}</p>
+    <ul class="flex gap-x-4 flex-row">
+        {tags.map((tags) => (
+            <li>
+            <span class={`flex gap-x-2 rounded-full text-sm ${tags.class} py-2 px-1 `}>
+                <tags.icon class="size-6" />
+                {tags.name}
+            </span>    
+            </li>
+        ))}
+    </ul>
+    <img class="rounded shadow-2xl shadow-white/20" src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+
+    </article>
+
+ ))
+
+}
