@@ -14,12 +14,14 @@ import Estudios from '../components/Estudios.astro'
 import User from '../components/icons/User.astro';
 import Code from '../components/icons/Code.astro';
 import Proyectos from '../components/Proyectos.astro'
+import cv from '../components/cvemanuel.pdf'
+import Cvicon from '../components/icons/Cv.astro'
 ---
 
 <Layout
  title="Portfolio de Emanuel - Estudiante en Informatica">
 	<main class="px-4">
-		<Container class="py-44 pb-24">
+		<Container id="top" id="contacto" class="py-44 pb-24">
 			<img  class="rounded-full size-20 mb-4 "
 			src="/src/components/perfilfoto.jpg" 
 			alt="ema photo"/>
@@ -27,15 +29,16 @@ import Proyectos from '../components/Proyectos.astro'
 			<h1 class="text-white text-3xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-9">Hey, soy Emanuel 
 				<a href ="https://www.linkedin.com/in/emagonzalez/" 
 				target="_blank" 
-				rel="noopener" 
+				rel="noopener noreferrer" 
 				class="flex justify-center items-center ">
-					
-				<Badge>Disponible para trabajar<Badge/> </a> </h1>
+					<Badge>Disponible para trabajar</Badge>
+				</a> 
+			</h1>
 					<h2 class="lg:tex-2xl text-xl text-wrap max-w-[700px]">
 					<span>Buscando mi primera experiencia.</span>
 					<span class=" text-yellow-200/90"> Estudiante en Informatica (Tecnolgo en informatica).</span>
 					<span class="text-blue-100/90">De Montevideo, &#x1F1FA;&#x1F1FE;.</span> 
-					<spa class="opacity-85">Especializando en crear aplicaciones unicas.</span>
+					<spa class="opacity-85">Especializado en brindar soluciones únicas.</span>
 				</h2>
 				<nav class="flex gap-x-4 mt-6 flex-wrap ">
 					<PanelSocial href="https://www.linkedin.com/in/emagonzalez/">
@@ -52,11 +55,16 @@ import Proyectos from '../components/Proyectos.astro'
 						<Mail class="lg:size-6 size-4"/>
         				gonzalez2vecesz@gmail.com
 					</PanelSocial>
+
+					<PanelSocial href={cv}>
+						<Cvicon class="lg:size-6 size-4"/>
+        				Curriculum Vitae
+					</PanelSocial>
 					
 				</nav>
 		</Container>
 
-		<Container>
+		<Container id="sobre-mi">
 			<h2 class="text-3xl font-semibold mb-6 gap-x-3 flex items-center">
 			<User class="size-7"/>
 			Sobre mí
@@ -92,13 +100,16 @@ import Proyectos from '../components/Proyectos.astro'
 
 			</Container>
 
-			<Container>
+			<Container id="proyectos">
 				<h2 class="text-3xl font-semibold mb-6 gap-x-3 flex items-center mt-10">
 				<Code class="size-7"/>
 				Proyectos
 			
+				
 				</h2>
+				
 				<Proyectos/>
+
 
 			</Container>
 

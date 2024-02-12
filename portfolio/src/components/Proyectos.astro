@@ -1,5 +1,5 @@
-
 ---
+import GitHub from '../components/icons/GitHub.astro';
 import C from '../components/icons/C.astro'
 const TAGS = {
     C:{
@@ -11,10 +11,10 @@ const TAGS = {
 
 const PROYECTOS = [
     {
-        title: 'Tecnólogo en Informática - Fing',
-        description: 'UTU Buceo.',
+        title: 'Simulador de administrador de archivos y directorios',
+        description: 'Simulador del administrador de archivos y directorios – file system – de un sistema operativo, el cual se implementa un conjunto de comandos básicos de manejo de archivos y directorios, con sintaxis y comportamientos similares al Sistema Operativo MS-DOS programado en C++',
         link: '#',
-        github:'#',
+        github:'https://github.com/zWp4a/SystemC',
         image:"/src/components/335shots_so.webp",
         tags: [TAGS.C,]
     }
@@ -22,10 +22,10 @@ const PROYECTOS = [
 ---
 
 {
- PROYECTOS.map(({title, description, tags, image })=> (
+ PROYECTOS.map(({title, description, tags, image, github })=> (
 <article>
     
-    <h3 class="text-2xl fonrt-semibold text-yellow-200 mb-2">{title} </h3>
+    <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title} </h3>
     <p class="text-lg mb-4 text-pretty">{description}</p>
     <ul class="flex gap-x-4 flex-row">
         {tags.map((tags) => (
@@ -33,10 +33,24 @@ const PROYECTOS = [
             <span class={`flex gap-x-2 rounded-full text-sm ${tags.class} py-2 px-1 `}>
                 <tags.icon class="size-6" />
                 {tags.name}
-            </span>    
+            </span>
             </li>
         ))}
     </ul>
+
+    <a class="rounded-full border border-white/10 
+        flex justify-center items-center 
+        gap-x-2 md:py-2 lg:px-4 py-1 px-2 bg-white/5 text-xs md:text-base
+        hover:scale-110 hover:bg-white/10 transition" 
+        href="https://github.com/zWp4a/SystemC"
+        target="_blank"
+        rel="noopener noreferrer">
+    
+        <GitHub class="size-4"/>
+        				Github
+    
+    </a> 
+
     <img class="rounded shadow-2xl shadow-white/20" src={image} alt={`Captura de pantalla del proyecto ${image}`} />
 
     </article>
